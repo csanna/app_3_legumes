@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block monTitre %}Fruits et légumes à votre disposition{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-3">Bienvenue sur le meilleur site!</h1>
+        <p class="lead">Vous pouvez acheter différents fruits et légumes sur ce site</p>
+        <hr class="my-4">
+        <p>Tout ce que vous avez à faire est de cliquer sur le lien ci-dessous: </p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{{path('aliments')}}" role="button">Passer commande</a>
+        </p>
+    </div>
+{% endblock %}
