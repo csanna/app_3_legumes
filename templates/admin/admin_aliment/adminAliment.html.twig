@@ -5,11 +5,19 @@
 {% block monTitre %}Page d'aministration{% endblock %}
 
 {% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{message}}
+        </div>
+    {% endfor %}
+
     <a button type="button" class="btn btn-success" href="{{path('admin_aliment_creation')}}">Ajouter</button></a>
     <table class="table">
         <tr class="table-primary">
             <td>Image</td>
             <td>Aliment</td>
+            <td>Type</td>
             <td>Prix</td>
             <td>Calories</td>
             <td>Protéines</td>
@@ -19,8 +27,9 @@
         </tr>
         {% for aliment in aliments %}
             <tr>
-                <td><img src="{{asset('images/' ~ aliment.image)}}" class="perso_imgAlimentAdmin"></td>
+                <td><img src="{{asset('images/aliments/' ~ aliment.image)}}" class="perso_imgAlimentAdmin"></td>
                 <td><strong>{{aliment.nom}}</strong></td>
+                <td><strong>{{aliment.type.libelle}}</strong></td>
                 <td>{{aliment.prix}}</td>
                 <td>{{aliment.calorie}}</td>
                 <td>{{aliment.proteine}}</td>

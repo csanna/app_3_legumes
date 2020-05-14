@@ -10,7 +10,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $a1 = new Aliment();
+        /* $a1 = new Aliment();
         $a1->setNom("Carotte")
             ->setCalorie(36)
             ->setPrix(1.80)
@@ -54,6 +54,6 @@ class AppFixtures extends Fixture
 
         $manager->persist($a4);    
 
-        $manager->flush();
+        $manager->flush(); */
     }
 }
